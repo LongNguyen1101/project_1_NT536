@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+.Recommend{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Pixelify Sans", sans-serif;
+    gap: 10px;
+    height: 90vh;
+}
+
+.Recommend h1{
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.Recommend hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+}
+
+.Recommend-item{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}
+
+@media(max-width:1280px){
+    .Recommend{
+        height: 70vh;
+    }
+    .Recommend h1{
+        font-size: 40px;
+    }
+    .Recommend hr{
+        width: 160px;
+        height: 4px;
+    }
+    .Recommend-item{
+        gap: 20px;
+        margin-top: 30px;
+    }
+}
+
+@media(max-width:1024px){
+    .Recommend{
+        height: 60vh;
+    }
+    .Recommend h1{
+        font-size: 30px;
+    }
+    .Recommend hr{
+        width: 120px;
+        height: 3px;
+    }
+    .Recommend-item{
+        gap: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:800px){
+    .Recommend{
+        height: 50vh;
+        gap: 6px;
+    }
+    .Recommend h1{
+        font-size: 20px;
+    }
+    .Recommend hr{
+        width: 100px;
+    }
+    .Recommend-item{
+        gap: 5px;
+    }
+}
+
+@media(max-width:500px){
+    .Recommend{
+        height: 90vh;
+    }
+    .Recommend-item{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
