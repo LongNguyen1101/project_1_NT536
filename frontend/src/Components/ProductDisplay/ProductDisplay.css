@@ -110,6 +110,12 @@
     font-weight: 600;
 }
 
+.product-price{
+    margin-top: 40px;
+    font-size: 45px;
+    color:#FF0000;
+}
+
 @media(max-width:1280px){
     .productdisplay{
         margin: 0px 60px;
@@ -247,6 +253,10 @@
     .productdisplay-right-category{
         font-size: 10px;
     }
+}
+
+.productdisplay-right-description p{
+    margin-bottom: 100px;
 }
 
 @media(max-width:500px){

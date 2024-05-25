@@ -9,7 +9,7 @@ export default function MultiFilters() {
   const [filteredItems, setFilteredItems] = useState(items);
 
   let filters = [];
-
+  
   items.forEach((x, index) =>
     {
       

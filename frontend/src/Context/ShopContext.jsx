@@ -3,6 +3,7 @@ import React, {createContext, useEffect, useState} from "react";
 
 
 export const ShopContext = createContext(null);
+export const FetchData = createContext(null);
 
 const getDefaultCart = () => {
     let cart = {};
@@ -19,13 +20,13 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     useEffect(() => {
-        fetch('http://localhost:4000/allproducts')
+        fetch('http://localhost:8000/api/games')
         .then((response) => response.json())
-        .then((data) => setAll_Product(data))
-
+        .then((data) => console.log(data))
+        
         if(localStorage.getItem('auth-token'))
         {
-            fetch('http://localhost:4000/getcart',{
+            fetch('http://localhost:8000/getcart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -106,5 +107,38 @@ const ShopContextProvider = (props) => {
         </ShopContext.Provider>
     )
 }
+//     const FetchDataProvider = (props) => {
+    
+//         const[all_product,setAll_Product] = useState([]);
+        
+//         const data = () => {
+//         useEffect(() => {
+//             fetch('http://localhost:8000/api/games')
+//             .then((response) => response.json())
+//             .then((data) => console.log(data))
+
+//             if(localStorage.getItem('auth-token'))
+//             {
+//                 fetch('http://localhost:8000/getcart',{
+//                     method:'POST',
+//                     headers:{
+//                         Accept:'application/form-data',
+//                         'auth-token':`${localStorage.getItem('auth-token')}`,
+//                         'Content-Type' : 'application/json',
+//                     },
+//                 }).then((response) => response.json())
+//                 .then((data) => setCartItems(data));
+//             }
+//         },[])
+//         }
+//             const contextValue = {all_product};
+
+//             return (
+//                 <FetchData.Provider value={contextValue}>
+//                     {props.children}
+//                 </FetchData.Provider>
+//             )
+// }
+
 
 export default ShopContextProvider;
